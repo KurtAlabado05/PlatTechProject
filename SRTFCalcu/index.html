@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRTF Scheduling</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="input-section">
+            <h2>Input</h2>
+            <h3>Shortest Remaining Time First, SRTF Algorithm</h3>
+            <label for="arrival-times">Arrival Times</label>
+            <input type="text" id="arrival-times" placeholder="e.g. 0 2 4 6">
+            <label for="burst-times">Burst Times</label>
+            <input type="text" id="burst-times" placeholder="e.g. 6 8 7 3">
+            <button id="solve-btn">Solve</button>
+        </div>
+
+        <div class="output-section">
+            <h2>Output</h2>
+            <div id="output-placeholder">
+                <p>Gantt chart and table will be shown here</p>
+            </div>
+            <div class="gantt-chart" style="display: none;">
+                <h3>Gantt Chart</h3>
+                <div id="gantt"></div>
+            </div>
+            <table id="output-table" style="display: none;">
+                <thead>
+                    <tr>
+                        <th>Job</th>
+                        <th>Arrival Time</th>
+                        <th>Burst Time</th>
+                        <th>Finish Time</th>
+                        <th>Turnaround Time</th>
+                        <th>Waiting Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Rows will be dynamically inserted here -->
+                </tbody>
+            </table>
+            <div class="average-times" style="display: none;">
+                <p>Average Turnaround Time: <span id="avg-turnaround">N/A</span></p>
+                <p>Average Waiting Time: <span id="avg-waiting">N/A</span></p>
+                <p>CPU Utilization: <span id="cpu-utilization">N/A</span></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
